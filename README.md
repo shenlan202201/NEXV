@@ -56,7 +56,7 @@ docker compose version && \
 systemctl is-active docker && \
 docker run --rm hello-world
 ```
-下载NEXV转发面板：[https://us1.zhuk.dpdns.org/NEXV_V1.0.55.tar.gz](https://github.com/shenlan202201/NEXV/releases/download/V1.0.55/NEXV_V1.0.55.tar.gz)
+[下载NEXV转发面板](https://github.com/shenlan202201/NEXV/releases/download/V1.0.55/NEXV_V1.0.55.tar.gz)
 
 # 安装 NEXV + Nginx + HTTPS
 
