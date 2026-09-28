@@ -56,31 +56,28 @@ docker compose version && \
 systemctl is-active docker && \
 docker run --rm hello-world
 ```
-[下载NEXV转发面板](https://github.com/shenlan202201/NEXV/releases/download/V1.0.55/NEXV_V1.0.55.tar.gz)
 
 # 安装 NEXV + Nginx + HTTPS
 
 ## 第一步：安装 NEXV
 
-先把 `NEXV_V1.0.55.tar.gz` 上传到 `/root/`。
+先将 NEXV 1.0.tar.gz 上传到 /root/
 
 然后执行：
 
 ```bash
-tar -xzf NEXV_V1.0.55.tar.gz
+tar -xzf NEXV\ 1.0.tar.gz
 
-cd NEXV_OverseasTransit_PaymentAuth_V1.0.55_CUSTOMER_DEPLOY_20260924
+cd NEXV\ 1.0
 
-chmod +x install.sh
-
-./install.sh install
+bash install.sh install
 ```
 已有NEVX 升级：
 
 ```bash
-tar -xzf NEXV_V1.0.55.tar.gz
+tar -xzf NEXV\ 1.0.tar.gz
 
-cd NEXV_OverseasTransit_PaymentAuth_V1.0.55_CUSTOMER_DEPLOY_20260924
+cd NEXV\ 1.0
 
 ./install.sh backup
 ./install.sh upgrade
