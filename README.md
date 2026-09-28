@@ -1,34 +1,5 @@
 ### NEXV 是一套面向多节点、多线路、多规则场景设计的中转与转发管理系统。系统由控制面板、节点运行时、隧道管理、规则管理、流量统计、用户与授权、支付注册、备份恢复、节点间 FastPath 高速传输层等模块组成。NEXV 的核心目标不是单纯“把端口转发出去”，而是把节点管理、规则编排、批量运维、流量控制、可靠传输、商业授权和数据备份整合到同一套系统中。当前正式版节点间高速传输层采用：NEXV FastPath NXF/2 NXF/2 是面向节点间转发场景设计的持久化可靠 UDP 传输协议，重点优化复杂公网、高 RTT、高并发、多短连接、混合业务和跨地区中转场景。
 
-##NXF/2 核心
-持久 UDP Session + 多路 Stream 复用
-流级可靠传输、选择性重传、自适应 ACK
-RTT/带宽感知的丢包恢复与拥塞控制
-Pacing，降低突发拥塞
-自动 MTU 探测与重新学习
-NAT Rebinding、路径验证、IP 迁移
-Stream + Session 双层流控，控制内存增长
-TCP Half-Close 支持
-X25519 + Ed25519 + HKDF-SHA256 + AES-256-GCM 加密认证
-性能与稳定性
-一条 Session 承载大量 TCP/Web/API/游戏等连接
-单个 Stream 丢包不会阻塞全部业务
-自适应乱序，减少伪丢包和无效重传
-Recovery Epoch 防止重复惩罚 CWND
-PTO 指数退避
-Buffer Pool、减少内存复制和 GC 压力
-Deadline-Driven Engine，降低空闲连接 CPU 唤醒
-运维能力
-
-支持：
-
-FastPath 健康检测
-异常组件自动恢复
-WebSocket / Runtime / FastPath / Remote Peer 恢复
-节点拓扑自动重放
-RTT、CWND、MTU、Loss、PTO、Flow Control 等运行指标监控
-NXF/2 不支持进程死亡后旧 TCP 字节流无感续接，但新连接可重新建立 Session。
-
 ## 功能介绍
 
 * 节点与隧道管理
